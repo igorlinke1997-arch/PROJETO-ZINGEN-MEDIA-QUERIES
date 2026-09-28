@@ -1,0 +1,70 @@
+ 
+ .py-base{
+
+    padding-block: var(--py-base);
+}
+
+.py-lg {
+    padding-block: var(--py-lg);
+}
+
+.py-xl{
+    padding-block: var(--py-xl);
+}
+
+.px-lg {
+    padding-inline: var(--px-lg);
+}
+ 
+    .flex {
+        display: flex;
+
+    }
+
+    .gap {
+        gap: 1rem;
+
+    }
+
+    .grid {
+        display: grid;
+    }
+
+    .even-columns {
+        display: grid;
+        gap: 1rem;
+    }
+ 
+ .container {
+    /*VARIAVEL DO TAMNHO DA TELA*/
+    --max-wigth: 375px;
+
+    max-width: var(--max-width);
+    width: calc(100% - var (--px-lg));
+
+    margin-inline: auto;
+    border: solid violet;
+
+
+}
+
+.desktop-only {
+    display: none;
+
+}
+
+    @media (width >= 80em){
+        .container{ 
+        --max-width: 80em;
+        }
+    }
+
+    .desktop-only{
+        display: initial;
+    }
+
+     .even-columns {
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
+ 
