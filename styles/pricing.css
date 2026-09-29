@@ -120,7 +120,7 @@ z-index: -1;
 
     }
 
-    & .card:nt-child(3) .separator{
+    & .card:nth-child(3) .separator{
         magin-block: 1.5rem;
-    }
+}
 }
