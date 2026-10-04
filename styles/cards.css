@@ -1,10 +1,96 @@
+/* =========================================
+   CARDS - ZINGEN
+========================================= */
+
 .card {
     background-color: var(--surface-color);
+
     border: 1px solid var(--stroke-color);
     border-radius: 1.5rem;
 
-    & h3 {
+    padding: 1.5rem;
+}
 
-        margin-top: 1re,;
+
+/* =========================================
+   TÍTULOS DOS CARDS
+========================================= */
+
+.card h3 {
+    margin-top: 1rem;
+
+    color: var(--text-color-primary);
+
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+
+    line-height: 1.2;
+}
+
+
+/* =========================================
+   TEXTOS DOS CARDS
+========================================= */
+
+.card p {
+    margin-top: 0.5rem;
+
+    color: var(--text-color-secondary);
+
+    font-size: var(--fs-base);
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   ÍCONES
+========================================= */
+
+.card > img:first-child {
+    width: 2rem;
+    height: 2rem;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (width < 48rem) {
+
+    .card {
+        padding: 1.5rem;
+
+        border-radius: 1.25rem;
     }
+
+    .card h3 {
+        margin-top: 1rem;
+
+        font-size: 1.25rem;
+    }
+
+    .card p {
+        font-size: 0.875rem;
+    }
+
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (width >= 80rem) {
+
+    .card {
+        padding: 2rem;
+    }
+
+    .card h3 {
+        margin-top: 1.25rem;
+    }
+
 }

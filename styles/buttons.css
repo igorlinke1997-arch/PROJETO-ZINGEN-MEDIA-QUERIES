@@ -1,71 +1,160 @@
+/* =========================================
+   BUTTONS - ZINGEN
+========================================= */
+
 .btn {
-    --btn-bg-color: var(--text-color-primary);
-    --btn-color: var(--bg-color); 
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
 
     border: 0;
-    background-color: transparent;
+    border-radius: 0.5rem;
 
-    display: flex;
-    align-items: center;
+    background-color: var(--text-color-primary);
+    color: var(--bg-color);
 
-    justify-content: center;
-    
-    width: fit-content;
-    border-radius: .5rem;
-    font: var(--fw-md) var(--fs-base)/1.5rem var(--ff-sans);
+    font-family: var(--ff-sans);
+    font-weight: var(--fw-md);
 
     cursor: pointer;
-    background: var(--btn-bg-color);
-    color: var(--btn-color);
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
 }
+
+
+/* =========================================
+   HOVER
+========================================= */
 
 .btn:hover {
+    background-color: var(--brand-color-primary);
+    color: var(--bg-color);
 
-    --btn-bg-color: linear-gradient(90deg, var(--brand-color-secondary) 0%
-    var(--brand-color-primary) 100%);
-    --btn-color: var(--surface-color);
-        -webkit-background-clip: initial;
-        background-clip: initial;
-        color: var(--btn-color);
-
-}
-
-.btn-sm{
-
-    padding: .5rem 1 rem;
-    font-size: var(--fs-sm);
+    transform: translateY(-1px);
 }
 
 
-.btn-md{
+/* =========================================
+   BOTÃO PEQUENO
+========================================= */
 
-    padding: 7.5rem 1.5rem;
-    font-size: var(--fs-base);
+.btn-sm {
+    min-height: 2.5rem;
+
+    padding: 0.625rem 1rem;
+
+    font-size: 0.875rem;
 }
 
 
-.btn-lg{
+/* =========================================
+   BOTÃO MÉDIO
+========================================= */
 
-    padding: 1rem 2rem;
-    font-size: var(--fs-lg);
+.btn-md {
+    min-height: 3rem;
+
+    padding: 0.75rem 1.5rem;
+
+    font-size: 0.875rem;
 }
 
-.btn[aria-label]{
 
-    &::before{
-        content: "";
-        position: absolute;
-        border-radius: inherit;
-        inset: 1.5px;
-        background-color: var(--bg-color);
+/* =========================================
+   BOTÕES DO HERO
+========================================= */
 
+#hero .buttons {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+
+    margin-top: 2rem;
+}
+
+
+/* PRIMEIRO BOTÃO - VER PLANOS */
+
+#hero .buttons .btn:first-child {
+    background-color: transparent;
+
+    color: var(--text-color-primary);
+
+    border: 1px solid var(--text-color-primary);
+}
+
+#hero .buttons .btn:first-child:hover {
+    background-color: var(--text-color-primary);
+
+    color: var(--bg-color);
+}
+
+
+/* SEGUNDO BOTÃO - BAIXAR AGORA */
+
+#hero .buttons .btn:last-child {
+    background-color: var(--text-color-primary);
+
+    color: var(--bg-color);
+}
+
+#hero .buttons .btn:last-child:hover {
+    background-color: var(--brand-color-primary);
+
+    color: var(--bg-color);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (width < 48rem) {
+
+    .btn-sm {
+        min-height: 2rem;
+
+        padding: 0.5rem 0.75rem;
+
+        font-size: 0.75rem;
     }
-    &::after {
-        content: attr(aria-label);
-        background: var(--btn-bg-color);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        position: relative;
+
+    .btn-md {
+        min-height: 2.5rem;
+
+        padding: 0.625rem 1rem;
+
+        font-size: 0.75rem;
     }
+
+    #hero .buttons {
+        gap: 0.75rem;
+
+        margin-top: 1.5rem;
+    }
+
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (width >= 80rem) {
+
+    .btn-sm {
+        padding-inline: 1.25rem;
+    }
+
+    .btn-md {
+        padding-inline: 1.5rem;
+    }
+
 }

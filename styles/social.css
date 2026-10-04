@@ -1,46 +1,101 @@
+/* =========================================
+   SOCIAL - ZINGEN
+========================================= */
+
 a.social {
-    --bg-img: "";
-    background-image: var(--bg-img);
-    width: 1.5rem;
-    height: 1.5rem;
     display: block;
 
-        -webkit-background-clip: initial;
-        background-clip: initial;
+    width: 1.5rem;
+    height: 1.5rem;
 
-    &[aria-label="tiktok"]{
+    flex-shrink: 0;
 
-        --bg-img: url(../assets/icons/TiktokHover.svg);
-        &:hover {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 
-            --bg-img: url(../assets/icons/TiktokHover.svg);
-        }
-    }
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+
+    opacity: 0.8;
+}
+
+a.social:hover {
+    transform: translateY(-2px);
+    opacity: 1;
 }
 
 
-    &[aria-label="instagram"]{
+/* =========================================
+   TIKTOK
+========================================= */
 
-       
-       --bg-img: url(../assets/icons/Instagram.svg);
-       
-        --bg-img: url(../assets/icons/instagramHover.svg);
+a.social[aria-label="TikTok"],
+a.social[aria-label="tiktok"] {
+    background-image: url("../assets/icons/tiktok.svg");
+}
+
+a.social[aria-label="TikTok"]:hover,
+a.social[aria-label="tiktok"]:hover {
+    background-image: url("../assets/icons/TiktokHover.svg");
+}
+
+
+/* =========================================
+   INSTAGRAM
+========================================= */
+
+a.social[aria-label="Instagram"],
+a.social[aria-label="instagram"] {
+    background-image: url("../assets/icons/instagram.svg");
+}
+
+a.social[aria-label="Instagram"]:hover,
+a.social[aria-label="instagram"]:hover {
+    background-image: url("../assets/icons/instagramHover.svg");
+}
+
+
+/* =========================================
+   TWITTER
+========================================= */
+
+a.social[aria-label="Twitter"],
+a.social[aria-label="twitter"] {
+    background-image: url("../assets/icons/twitter.svg");
+}
+
+a.social[aria-label="Twitter"]:hover,
+a.social[aria-label="twitter"]:hover {
+    background-image: url("../assets/icons/twitterhover.svg");
+}
+
+
+/* =========================================
+   DISCORD
+========================================= */
+
+a.social[aria-label="Discord"],
+a.social[aria-label="discord"] {
+    background-image: url("../assets/icons/discord.svg");
+}
+
+a.social[aria-label="Discord"]:hover,
+a.social[aria-label="discord"]:hover {
+    background-image: url("../assets/icons/discordHover.svg");
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (width < 48rem) {
+
+    a.social {
+        width: 1.25rem;
+        height: 1.25rem;
     }
 
-
-      &[aria-label="twitter"]{
-
-       
-       --bg-img: url(../assets/icons/Twitter.svg);
-       
-        --bg-img: url(../assets/icons/Twitterhover.svg);
-    }
-
-      &[aria-label="discord"]{
-
-       
-       --bg-img: url(../assets/icons/discord.svg);
-       
-        --bg-img: url(../assets/icons/discordHover.svg);
-    }
-
+}

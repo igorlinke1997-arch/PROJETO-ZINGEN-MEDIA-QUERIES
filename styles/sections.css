@@ -1,46 +1,264 @@
+/* =========================================
+   SECTIONS - ZINGEN
+========================================= */
 
 
+/* =========================================
+   TÍTULOS DAS SEÇÕES
+========================================= */
 
+section header strong {
+    display: block;
 
+    margin-bottom: 0.75rem;
 
-section{
+    color: var(--brand-color-primary);
 
-    & header {
-        display: block;
-        font: var(--fw-md) var(--fs-sm)/100% var(--ff-sans);
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: var(--fw-bold);
 
-        color: var(--brand-color-primary);
-
-    }
-
-    & h2 {
-        margin-top: 5rem;
-
-    }
-
-    & p{
-        margin-top: .5rem;
-        color: var(--text-color-secondary);
-    }
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
-#about {
-    background-color: var(--surface-color);
-    & .even-columns {
-        gap: 2rem;
-    }
+section header h2 {
+    margin-top: 0;
+
+    font-size: var(--fs-xl);
+    line-height: 1.1;
 }
+
+section header p {
+    margin-top: 1rem;
+
+    color: var(--text-color-secondary);
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   SMARTPHONES
+========================================= */
 
 #smartphones-img {
-    background: url(../assets/images/bgmobile.png) top/cover;
+    position: relative;
+
+    min-height: 25rem;
+
+    background:
+        url("../assets/images/bgmobile.png")
+        no-repeat
+        top center / cover;
+
+    overflow: visible;
+}
+
+#smartphones-img .container {
+    position: relative;
+
+    min-height: 25rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+#smartphones-img img {
+    position: absolute;
+
+    top: -7rem;
+
+    width: min(34rem, 90%);
+
+    z-index: 3;
+}
+
+
+/* =========================================
+   ABOUT / CONHEÇA O APP
+========================================= */
+
+#about {
+    position: relative;
+
+    background-color: var(--surface-color);
+
+    overflow: hidden;
+}
+
+#about .container {
+    padding-block: 4rem;
+}
+
+#about header {
+    max-width: 34rem;
+}
+
+#about h2 {
+    margin-bottom: 1.5rem;
+}
+
+#about p {
+    margin-top: 1rem;
+
+    color: var(--text-color-secondary);
+
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+#about .container > img {
+    width: 100%;
+    max-width: 31rem;
+
+    justify-self: center;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (width < 48rem) {
+
+    #smartphones-img {
+        min-height: 18rem;
+    }
+
+    #smartphones-img .container {
+        min-height: 18rem;
+    }
+
+    #smartphones-img img {
+        top: -4rem;
+
+        width: min(20rem, 95%);
+    }
+
+    #about .container {
+        padding-block: 3.5rem;
+    }
+
+    section header strong {
+        font-size: 0.75rem;
+    }
+
+    #about h2 {
+        font-size: 1.5rem;
+        line-height: 1.15;
+    }
+
+    #about p {
+        font-size: 0.875rem;
+    }
 
 }
 
 
-@media (width >= 80em){
-    #smartphone-img {
+/* =========================================
+   TABLET
+========================================= */
+
+@media (width >= 48rem) and (width < 80rem) {
+
+    #smartphones-img {
+        min-height: 28rem;
+    }
+
+    #smartphones-img .container {
+        min-height: 28rem;
+    }
+
+    #smartphones-img img {
+        width: 32rem;
+    }
+
+    #about .container {
+        padding-block: 5rem;
+    }
+
+    #about header {
+        max-width: 38rem;
+    }
+
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (width >= 80rem) {
+
+    /*
+       No desktop não usamos a seção separada
+       dos smartphones. O mockup aparece dentro
+       da seção "Conheça o app".
+    */
+
+    #smartphones-img {
         display: none;
     }
+
+
+    /* SEÇÃO CONHEÇA O APP */
+
+    #about {
+        min-height: 48rem;
+    }
+
+    #about .container {
+        min-height: 48rem;
+
+        padding-block: 7rem;
+
+        align-items: center;
+    }
+
+
+    /* TEXTO */
+
+    #about header {
+        max-width: 38rem;
+    }
+
+    #about header strong {
+        margin-bottom: 1rem;
+
+        font-size: 0.875rem;
+    }
+
+    #about h2 {
+        max-width: 38rem;
+
+        margin-bottom: 2rem;
+
+        font-size: 3.5rem;
+        line-height: 1.05;
+
+        letter-spacing: -0.04em;
+    }
+
+    #about p {
+        max-width: 36rem;
+
+        margin-top: 1.25rem;
+
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+
+    /* MOCKUP DOS CELULARES */
+
+    #about .container > img {
+        display: block;
+
+        width: 38rem;
+        max-width: 100%;
+
+        justify-self: end;
+        align-self: center;
+    }
+
 }

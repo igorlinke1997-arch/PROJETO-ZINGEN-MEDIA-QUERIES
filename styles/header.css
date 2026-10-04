@@ -1,8 +1,116 @@
-header {
 
-    & a:first-child{
+/* =========================================
+   HEADER - ZINGEN
+========================================= */
 
-        margin-right: auto;
-    }
+body > header {
+    width: 100%;
+    background-color: var(--bg-color);
+    position: relative;
+    z-index: 10;
 }
 
+/* CONTAINER */
+
+body > header .container {
+    padding-block: 1.5rem;
+}
+
+/* MENU DE NAVEGAÇÃO */
+
+body > header nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* LOGO */
+
+body > header nav > a:first-child {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+body > header nav > a:first-child img {
+    width: 6.25rem;
+    height: auto;
+}
+
+/* LINKS DO MENU */
+
+body > header nav > a:not(.btn) {
+    font-size: 0.875rem;
+    font-weight: var(--fw-md);
+    white-space: nowrap;
+}
+
+body > header nav > a:not(.btn):hover {
+    color: var(--brand-color-primary);
+}
+
+/* BOTÃO BAIXAR AGORA */
+
+body > header nav > .btn {
+    flex-shrink: 0;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (width < 48rem) {
+
+    body > header .container {
+        padding-block: 1rem;
+    }
+
+    body > header nav {
+        gap: 1rem;
+    }
+
+    body > header nav > a:first-child img {
+        width: 5rem;
+    }
+
+    body > header nav > a.desktop-only {
+        display: none;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (width >= 48rem) and (width < 80rem) {
+
+    body > header nav {
+        gap: 1.25rem;
+    }
+
+    body > header nav > a.desktop-only {
+        display: none;
+    }
+
+}
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (width >= 80rem) {
+
+    body > header .container {
+        padding-block: 1.5rem;
+    }
+
+    body > header nav {
+        gap: 2rem;
+    }
+
+    body > header nav > a.desktop-only {
+        display: inline-flex;
+    }
+
+}

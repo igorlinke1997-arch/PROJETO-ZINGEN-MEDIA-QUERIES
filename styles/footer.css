@@ -1,61 +1,188 @@
-footer {
-    color: var(--text-color-secondary);
-    font-weight: var(--fw-md);
-    & .container {
-        paddding-inline: 3rem;
-    }
+/* =========================================
+   FOOTER - ZINGEN
+========================================= */
 
-    & .container,
-    &  .top {
+footer {
+    background-color: var(--bg-color);
+
+    color: var(--text-color-secondary);
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+footer .container {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+}
+
+
+/* =========================================
+   PARTE SUPERIOR
+========================================= */
+
+footer .top {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+
+    padding-bottom: 4rem;
+}
+
+
+/* LOGO */
+
+footer .top > img {
+    width: 6.25rem;
+    height: auto;
+}
+
+
+/* =========================================
+   NAVEGAÇÃO
+========================================= */
+
+footer nav ul {
+    display: grid;
+
+    gap: 0.75rem;
+
+    list-style: none;
+}
+
+footer nav li {
+    margin: 0;
+
+    color: var(--text-color-secondary);
+
+    font-size: 0.875rem;
+}
+
+footer nav li.title {
+    margin-bottom: 0.5rem;
+
+    color: var(--brand-color-primary);
+
+    font-size: 0.75rem;
+    font-weight: var(--fw-bold);
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+
+/* LINKS */
+
+footer nav a {
+    transition: color 0.2s ease;
+}
+
+footer nav a:hover {
+    color: var(--text-color-primary);
+}
+
+
+/* =========================================
+   PARTE INFERIOR
+========================================= */
+
+footer .bottom {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 1.5rem;
+
+    padding-top: 2rem;
+
+    border-top: 1px solid var(--stroke-color);
+}
+
+
+/* REDES SOCIAIS */
+
+footer .bottom > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.5rem;
+}
+
+
+/* COPYRIGHT */
+
+footer .copy {
+    color: var(--text-color-secondary);
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (width >= 48rem) {
+
+    footer .top {
+        grid-template-columns: 1fr 1fr;
+
         gap: 3rem;
     }
 
-    & nav.even-columns{
+    footer .bottom {
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: space-between;
+    }
+
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (width >= 80rem) {
+
+    footer .container {
+        padding-top: 6rem;
+        padding-bottom: 2rem;
+    }
+
+    footer .top {
+        grid-template-columns:
+            2fr
+            1fr
+            1fr
+            1fr;
+
         gap: 4rem;
 
-
-        & .top ul{
-            align-content: start;
-        }
+        padding-bottom: 5rem;
     }
 
-
-    & .title {
-        font-size: 0.75rem;
-        letter-spacing: 0.08rem;
-        text-transform: uppercase;
-        color: var(--brand-color-primary);
+    footer .top > img {
+        width: 7rem;
     }
 
-    & .bottom{
-        flex-wrap: wrap;
-
-        & > div{
-            margin-right: auto;
-
-        }
-
-        & span{
-            font-size: .875rem;
-        }
+    footer nav li {
+        font-size: 0.875rem;
     }
 
-    @media (width >=80em){
+    footer .bottom {
+        flex-direction: row;
 
-        .container{
-            padding-inline: 0;
-            padding-bottom: 2rem;
-
-        }
-
-        & .top {
-            grid-template-columns: auto 1fr;
-            & nav {
-                margin-left: auto;
-                & ul{
-                    width: 14rems;
-                }
-            }
-        }
+        align-items: center;
+        justify-content: space-between;
     }
+
 }
